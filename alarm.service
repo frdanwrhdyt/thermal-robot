@@ -1,0 +1,14 @@
+[Unit]
+Description=Alarm Service
+After=network.target
+StartLimitIntervalSec=1
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=3
+User=pi
+ExectStart=sh /home/pi/test/alarm.sh
+
+[Install]
+WantedBy=multi-user.target
